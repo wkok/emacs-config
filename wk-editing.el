@@ -7,8 +7,13 @@
 ;;; Code:
 
 (use-package company
+  :bind (:map
+         global-map
+         ("TAB" . company-complete-common-or-cycle))
   :config
   (global-company-mode t)
+  :custom
+  (company-idle-delay nil)
   :diminish nil)
 
 (use-package smartparens
