@@ -6,33 +6,28 @@
 
 ;;; Code:
 
-(use-package magit
-  :bind ("C-x g" . magit-status))
+(use-package magit)
 
-;; Display possible completions at all places
 (use-package cider)
 
+(use-package which-key
+    :config
+    (which-key-mode))
+
 (use-package projectile
-  :diminish projectile
-  :config
-  (projectile-global-mode)
-  :bind (("<f6>" . projectile-ag)
-         ("C-<f6>" . projectile-replace)
-         ("<f7>" . projectile-find-file)
-         ("<f8>" . projectile-run-shell)
-         ("<f9>" . projectile-command-map)
-         :map projectile-mode-map
-         ("s-d" . projectile-find-dir)
-         ("s-p" . projectile-switch-project)
-         ("s-f" . projectile-find-file)
-         ("s-a" . projectile-ag))
-  :custom
-  (projectile-completion-system 'default))
+  :ensure t
+  :init
+  (projectile-mode)
+  :bind (:map projectile-mode-map
+              ("s-p" . projectile-command-map)
+              ("C-c p" . projectile-command-map)))
 
 (use-package selectrum
   :config (selectrum-mode))
 
 (use-package selectrum-prescient
-  :config (selectrum-prescient-mode))
+  :config
+  (selectrum-prescient-mode)
+  (prescient-persist-mode))
 
 ;;; wk-ide.el ends here
