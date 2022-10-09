@@ -7,8 +7,6 @@
 ;;; Code:
 
 (use-package company
-  :init
-  (add-to-list 'company-backends 'company-restclient)
   :bind (:map
          global-map
          ("TAB" . company-indent-or-complete-common))
