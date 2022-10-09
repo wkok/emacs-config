@@ -6,7 +6,9 @@
 
 ;;; Code:
 
-(use-package restclient)
+;; Does not seem to be available in melpa-stable
+(use-package restclient
+  :pin melpa)
 
 ;; Provides auto-completion for HTTP methods and headers
 (use-package company-restclient)

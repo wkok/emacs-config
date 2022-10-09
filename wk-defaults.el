@@ -7,6 +7,13 @@
 ;;; Code:
 
 (setq-default
+
+ ;; As recommended by lsp-doctor
+ gc-cons-threshold 100000000
+
+ ;; As recommended by lsp-doctor
+ read-process-output-max (* 1024 1024)
+
  ;; Don't use the compiled code if its the older package.
  load-prefer-newer t
 
