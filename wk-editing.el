@@ -24,8 +24,8 @@
   (("C-M-f" . sp-forward-sexp)
    ("C-M-b" . sp-backward-sexp)
    ("C-M-d" . sp-down-sexp)
-   ("C-M-a" . sp-backward-down-sexp)
-   ("C-M-e" . sp-up-sexp)
+   ;; ("C-M-a" . sp-backward-down-sexp)
+   ;; ("C-M-e" . sp-up-sexp)
    ("C-M-u" . sp-backward-up-sexp)
    ("C-M-t" . sp-transpose-sexp)
    ("C-M-n" . sp-next-sexp)
@@ -43,8 +43,5 @@
 (use-package smartparens-config
   :ensure smartparens
   :config (progn (show-smartparens-global-mode t)))
-
-(global-set-key (kbd "M-p") 'ca-prev-defun)
-(global-set-key (kbd "M-n") 'ca-next-defun)
 
 ;;; wk-editing.el ends here
