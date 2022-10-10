@@ -11,8 +11,10 @@
          ("M-'" . lsp-treemacs-call-hierarchy)
          ("C-c l" . lsp-menu/body))
   :config
-  (setq lsp-enable-snippet -1)
-  :hook ((clojure-mode . lsp))
+  (setq lsp-enable-snippet nil)
+  :hook ((clojure-mode . lsp)
+         (clojurec-mode . lsp)
+         (clojurescript-mode . lsp))
   :commands lsp)
 
 (use-package lsp-ui :commands lsp-ui-mode)
