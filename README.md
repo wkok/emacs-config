@@ -3,6 +3,14 @@
 Configure ~/.emacs
 
 ```
+;;; .emacs --- emacs config
+
+;;; Commentary:
+
+;;; Emacs config entry point
+
+;;; Code:
+
 (add-to-list 'load-path "~/src/emacs-config/")
 
 (load-library "wk-package")
@@ -14,5 +22,7 @@ Configure ~/.emacs
 (load-library "wk-ide")
 (load-library "wk-features")
 (load-library "wk-lsp")
+
+;;; .emacs ends here
 
 ```
