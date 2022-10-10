@@ -10,6 +10,10 @@
 
 (use-package cider)
 
+(use-package yaml-mode)
+
+(use-package json-mode)
+
 (use-package which-key
     :config
     (which-key-mode))
@@ -26,5 +30,12 @@
   :init (global-flycheck-mode))
 
 (use-package flycheck-clj-kondo)
+
+(use-package yasnippet
+  :config
+  (yas-global-mode))
+
+(use-package yasnippet-snippets
+  :after yasnippet)
 
 ;;; wk-ide.el ends here
