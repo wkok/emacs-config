@@ -14,14 +14,6 @@
     :config
     (which-key-mode))
 
-(use-package projectile
-  :ensure t
-  :init
-  (projectile-mode)
-  :bind (:map projectile-mode-map
-              ("s-p" . projectile-command-map)
-              ("C-c p" . projectile-command-map)))
-
 (use-package selectrum
   :config (selectrum-mode))
 
@@ -29,5 +21,10 @@
   :config
   (selectrum-prescient-mode)
   (prescient-persist-mode))
+
+(use-package flycheck
+  :init (global-flycheck-mode))
+
+(use-package flycheck-clj-kondo)
 
 ;;; wk-ide.el ends here
