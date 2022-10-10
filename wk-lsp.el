@@ -7,11 +7,14 @@
 ;;; Code:
 
 (use-package lsp-mode
+  :init
+  (setq lsp-keymap-prefix "C-c l")
   :bind (("M-?" . lsp-find-definition)
          ("M-'" . lsp-treemacs-call-hierarchy)
-         ("C-c l" . lsp-menu/body))
+         ("C-c r" . lsp-menu/body))
   :config
   (setq lsp-enable-snippet nil)
+  (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   :hook ((clojure-mode . lsp)
          (clojurec-mode . lsp)
          (clojurescript-mode . lsp))
