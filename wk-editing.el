@@ -41,7 +41,6 @@
    ("M-B" . sp-backward-symbol)))
 
 (use-package smartparens-config
-  :ensure smartparens
-  :config (progn (show-smartparens-global-mode t)))
+  :ensure smartparens)
 
 ;;; wk-editing.el ends here
