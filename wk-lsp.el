@@ -14,6 +14,7 @@
          ("C-c r" . lsp-menu/body))
   :config
   (setq lsp-enable-snippet nil)
+  (setq lsp-lens-enable nil)
   (add-hook 'lsp-mode-hook #'lsp-enable-which-key-integration)
   :hook ((clojure-mode . lsp)
          (clojurec-mode . lsp)
