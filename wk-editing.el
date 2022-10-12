@@ -45,4 +45,7 @@
 (use-package smartparens-config
   :ensure smartparens)
 
+(use-package expand-region
+  :bind ("C-=" . er/expand-region))
+
 ;;; wk-editing.el ends here

@@ -8,6 +8,8 @@
 
 ;; Does not seem to be available in melpa-stable
 (use-package restclient
+  :init
+  (add-to-list 'auto-mode-alist '("\\.rest" . restclient-mode))
   :pin melpa)
 
 ;; Provides auto-completion for HTTP methods and headers
