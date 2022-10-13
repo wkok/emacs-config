@@ -46,4 +46,10 @@
 (use-package expand-region
   :bind ("C-=" . er/expand-region))
 
+(use-package undo-tree
+  :pin gnu
+  :init
+  (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
+  (global-undo-tree-mode))
+
 ;;; wk-editing.el ends here
