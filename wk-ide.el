@@ -10,10 +10,6 @@
 
 (use-package cider)
 
-(use-package yaml-mode)
-
-(use-package json-mode)
-
 (use-package which-key
     :config
     (which-key-mode))
