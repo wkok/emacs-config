@@ -22,10 +22,15 @@
   (selectrum-prescient-mode)
   (prescient-persist-mode))
 
-(use-package flycheck
-  :init (global-flycheck-mode))
+(use-package flymake
+  :ensure nil
+  :bind (("M-n" . flymake-goto-next-error)
+         ("M-p" . flymake-goto-prev-error))
+  :hook (prog-mode . (lambda () (flymake-mode t)))
+  :config (remove-hook 'flymake-diagnostic-functions #'flymake-proc-legacy-flymake))
 
-(use-package flycheck-clj-kondo)
+(use-package flymake-kondor
+  :hook (clojure-mode . flymake-kondor-setup))
 
 (use-package yasnippet
   :config
@@ -33,5 +38,10 @@
 
 (use-package yasnippet-snippets
   :after yasnippet)
+
+(use-package eglot
+  :hook ((clojure-mode . eglot-ensure)
+         (clojurec-mode . eglot-ensure)
+         (clojurescript-mode . eglot-ensure)))
 
 ;;; wk-ide.el ends here
