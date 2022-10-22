@@ -39,6 +39,8 @@
 (use-package yasnippet-snippets
   :after yasnippet)
 
+(use-package dockerfile-mode)
+
 (use-package eglot
   :hook ((clojure-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure)
