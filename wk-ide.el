@@ -44,6 +44,9 @@
 (use-package eglot
   :hook ((clojure-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure)
-         (clojurescript-mode . eglot-ensure)))
+         (clojurescript-mode . eglot-ensure)
+         (java-mode . eglot-ensure)
+         (sh-mode) . eglot-ensure)
+         (dockerfile-mode . eglot-ensure))
 
 ;;; wk-ide.el ends here
