@@ -16,6 +16,11 @@
 (use-package company-restclient)
 (add-to-list 'company-backends 'company-restclient)
 
-(use-package plantuml-mode)
+(use-package plantuml-mode
+  :init
+  (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
+  (setq plantuml-default-exec-mode 'jar)
+  (setq plantuml-output-type "png")
+  (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode)))
 
 ;;; wk-features.el ends here
