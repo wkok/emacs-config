@@ -21,4 +21,6 @@
 ;; Load default theme
 (load-theme 'modus-vivendi)
 
+(use-package default-text-scale)
+
 ;;; wk-style.el ends here

@@ -8,7 +8,12 @@
 
 (use-package magit)
 
-(use-package cider)
+(use-package cider
+  :init
+  (setq clojure-toplevel-inside-comment-form t)
+
+  ;; So that "M-." and "M-?" instead get delegated to eglot
+  (setq cider-xref-fn-depth 90))
 
 (use-package which-key
     :config
