@@ -27,12 +27,12 @@
   (selectrum-prescient-mode)
   (prescient-persist-mode))
 
-(use-package flymake
-  :ensure nil
-  :bind (("M-n" . flymake-goto-next-error)
-         ("M-p" . flymake-goto-prev-error))
-  :hook (prog-mode . (lambda () (flymake-mode t)))
-  :config (remove-hook 'flymake-diagnostic-functions #'flymake-proc-legacy-flymake))
+;; (use-package flymake
+;;   :ensure nil
+;;   :bind (("M-n" . flymake-goto-next-error)
+;;          ("M-p" . flymake-goto-prev-error))
+;;   :hook (prog-mode . (lambda () (flymake-mode t)))
+;;   :config (remove-hook 'flymake-diagnostic-functions #'flymake-proc-legacy-flymake))
 
 (use-package flymake-kondor
   :hook (clojure-mode . flymake-kondor-setup))

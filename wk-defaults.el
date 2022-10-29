@@ -9,10 +9,10 @@
 (setq-default
 
  ;; As recommended by lsp-doctor
- gc-cons-threshold 100000000
+ ;; gc-cons-threshold 100000000
 
  ;; As recommended by lsp-doctor
- read-process-output-max (* 1024 1024)
+ ;; read-process-output-max (* 1024 1024)
 
  ;; Don't use the compiled code if its the older package.
  load-prefer-newer t
@@ -24,7 +24,7 @@
  custom-file "~/.emacs.d/custom-file.el"
 
  ;; Use your name in the frame title. :)
- frame-title-format (format "%s's Emacs" (capitalize user-login-name))
+ ;; frame-title-format (format "%s's Emacs" (capitalize user-login-name))
 
  ;; Do not create lockfiles.
  create-lockfiles nil
