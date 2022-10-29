@@ -69,4 +69,8 @@
 ;; proactively.
 (load custom-file t)
 
+;; Locale
+(set-locale-environment "en_US.UTF-8")
+(setenv "LANG" "en_US.UTF-8")
+
 ;;; wk-defaults.el ends here
