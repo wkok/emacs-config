@@ -52,4 +52,7 @@
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (global-undo-tree-mode))
 
+(add-hook 'text-mode-hook 'flyspell-mode)
+(add-hook 'prog-mode-hook 'flyspell-prog-mode)
+
 ;;; wk-editing.el ends here
