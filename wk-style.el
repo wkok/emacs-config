@@ -19,7 +19,9 @@
 (global-hl-line-mode t)
 
 ;; Load default theme
-(load-theme 'modus-vivendi)
+;; (load-theme 'modus-vivendi)
+(use-package dracula-theme)
+(load-theme 'dracula t)
 
 (use-package default-text-scale)
 
