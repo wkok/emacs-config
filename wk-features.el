@@ -21,6 +21,9 @@
   (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
   (setq plantuml-default-exec-mode 'jar)
   (setq plantuml-output-type "png")
+
+  ;; to get rid of the --illegal-access=deny arg that fails preview
+  (setq plantuml-java-args (list "-Djava.awt.headless=true" "-jar"))
   (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode)))
 
 ;;; wk-features.el ends here
