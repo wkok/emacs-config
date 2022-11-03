@@ -41,13 +41,7 @@
  auto-save-default nil
 
  ;; Allow commands to be run on minibuffers.
- enable-recursive-minibuffers t
-
- ;; Save clipboard strings into kill ring before replacing them. When
- ;; one selects something in another program to paste it into Emacs, but
- ;; kills something in Emacs before actually pasting it, this selection
- ;; is gone unless this variable is non-nil.
- save-interprogram-paste-before-kill t)
+ enable-recursive-minibuffers t)
 
 ;; Change all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)

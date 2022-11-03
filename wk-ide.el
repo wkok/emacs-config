@@ -49,6 +49,7 @@
 (use-package eglot
   :init
   (setq eglot-connect-timeout 300)
+  (setq eglot-events-buffer-size 0)
   :hook ((clojure-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure)
          (clojurescript-mode . eglot-ensure)
