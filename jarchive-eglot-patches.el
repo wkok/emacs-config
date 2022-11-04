@@ -32,4 +32,4 @@
                        retval)))
     (concat remote-prefix normalized)))
 
-;;; wk-ide.el ends here
+;;; jarchive-eglot-patches.el ends here
