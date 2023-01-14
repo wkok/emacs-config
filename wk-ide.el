@@ -60,4 +60,17 @@
 (use-package clj-deps-new
   :pin melpa)
 
+(defun nrepl-reset ()
+  (interactive)
+  (cider-switch-to-repl-buffer)
+  (goto-char (point-max))
+  (insert "(reset)")
+  (funcall (lookup-key (current-local-map) (kbd "RET")))
+  (cider-switch-to-last-clojure-buffer))
+
+;; For the reloaded workflow, reset the application
+(use-package clojure-mode
+  :ensure nil
+  :bind (("C-M-+" . nrepl-reset)))
+
 ;;; wk-ide.el ends here
