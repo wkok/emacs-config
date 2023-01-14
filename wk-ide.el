@@ -49,12 +49,15 @@
 (use-package eglot
   :init
   (setq eglot-connect-timeout 300)
-  (setq eglot-events-buffer-size 0)
+  ;; (setq eglot-events-buffer-size 0)
   :hook ((clojure-mode . eglot-ensure)
          (clojurec-mode . eglot-ensure)
          (clojurescript-mode . eglot-ensure)
          (java-mode . eglot-ensure)
          (sh-mode) . eglot-ensure)
          (dockerfile-mode . eglot-ensure))
+
+(use-package clj-deps-new
+  :pin melpa)
 
 ;;; wk-ide.el ends here
