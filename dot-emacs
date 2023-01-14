@@ -1,8 +1,3 @@
-# emacs-config
-
-Configure ~/.emacs
-
-```
 ;;; .emacs --- emacs config
 
 ;;; Commentary:
@@ -22,10 +17,3 @@ Configure ~/.emacs
 (load-library "jarchive")
 
 ;;; .emacs ends here
-
-```
-or just copy the template
-
-```
-cp $HOME/src/emacs-config/dot-emacs $HOME/.emacs
-```
