@@ -46,20 +46,25 @@
 
 (use-package dockerfile-mode)
 
-(use-package eglot
-  :init
-  (setq eglot-connect-timeout 300)
-  ;; (setq eglot-events-buffer-size 0)
-  :hook ((clojure-mode . eglot-ensure)
-         (clojurec-mode . eglot-ensure)
-         (clojurescript-mode . eglot-ensure)
-         (java-mode . eglot-ensure)
-         (sh-mode) . eglot-ensure)
-         (dockerfile-mode . eglot-ensure))
+(require 'eglot)
+(add-hook 'prog-mode-hook #'eglot-ensure)
+(setq eglot-connect-timeout 300)
+(setq eglot-extend-to-xref t)
 
-(use-package clj-deps-new
-  :pin melpa)
+(use-package jarchive
+  :pin gnu
+  :config (jarchive-setup))
 
+(defun jarchive-patch-eglot ()
+  "Patch old versions of Eglot to work with Jarchive."
+  (interactive) ;; TODO, remove when eglot is updated in melpa
+  (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
+  (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
+  (message "[jarchive] Eglot successfully patched."))
+
+(jarchive-patch-eglot)
+
+;; For the reloaded workflow, reset the application
 (defun nrepl-reset ()
   (interactive)
   (cider-switch-to-repl-buffer)
@@ -68,7 +73,6 @@
   (funcall (lookup-key (current-local-map) (kbd "RET")))
   (cider-switch-to-last-clojure-buffer))
 
-;; For the reloaded workflow, reset the application
 (use-package clojure-mode
   :ensure nil
   :bind (("C-M-+" . nrepl-reset)))

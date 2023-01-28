@@ -29,6 +29,6 @@
 ;; according to what your mouse wheel reports. Unlike ‘pixel-scroll-mode’, this mode scrolls the display pixel-by-pixel,
 ;; as opposed to only animating line-by-line scrolls.
 ;; From emacs 29
-;; (pixel-scroll-precision-mode)
+(pixel-scroll-precision-mode)
 
 ;;; wk-style.el ends here

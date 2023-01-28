@@ -19,7 +19,6 @@ Configure ~/.emacs
 (load-library "wk-editing")
 (load-library "wk-ide")
 (load-library "wk-features")
-(load-library "jarchive")
 
 ;;; .emacs ends here
 
