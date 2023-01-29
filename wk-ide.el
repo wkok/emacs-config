@@ -51,18 +51,18 @@
 (setq eglot-connect-timeout 300)
 (setq eglot-extend-to-xref t)
 
-(use-package jarchive
-  :pin gnu
-  :config (jarchive-setup))
-
-(defun jarchive-patch-eglot ()
+(defun jarchive-patch-eglot-override ()
   "Patch old versions of Eglot to work with Jarchive."
   (interactive) ;; TODO, remove when eglot is updated in melpa
   (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
   (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
   (message "[jarchive] Eglot successfully patched."))
 
-(jarchive-patch-eglot)
+(use-package jarchive
+  :pin gnu
+  :config
+  (jarchive-setup)
+  (jarchive-patch-eglot-override))
 
 ;; For the reloaded workflow, reset the application
 (defun nrepl-reset ()
@@ -76,5 +76,9 @@
 (use-package clojure-mode
   :ensure nil
   :bind (("C-M-+" . nrepl-reset)))
+
+(use-package yaml-mode)
+
+(use-package json-mode)
 
 ;;; wk-ide.el ends here
