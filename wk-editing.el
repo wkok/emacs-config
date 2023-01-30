@@ -55,4 +55,8 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+;; Make copy paste work on wayland
+;; see: https://github.com/doomemacs/doomemacs/issues/5219
+(setq x-select-request-type 'text/plain\;charset=utf-8)
+
 ;;; wk-editing.el ends here
