@@ -55,8 +55,14 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-;; Make copy paste work on wayland
+;; Make copy from host to emacs work
 ;; see: https://github.com/doomemacs/doomemacs/issues/5219
 (setq x-select-request-type 'text/plain\;charset=utf-8)
 
-;;; wk-editing.el ends here
+;; Make copy from emacs to host clipboard work
+(defun copy-the-thing-properly ()
+  (interactive)
+  (funcall interprogram-cut-function
+           (substring-no-properties (car kill-ring))))
+
+;;; wk-editing.el ends hereb
