@@ -68,4 +68,7 @@
   (funcall interprogram-cut-function
            (substring-no-properties (car kill-ring))))
 
+;; Enable tree-sitter
+(require 'treesit)
+
 ;;; wk-editing.el ends hereb

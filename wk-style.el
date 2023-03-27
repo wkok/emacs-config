@@ -19,11 +19,12 @@
 (global-hl-line-mode t)
 
 ;; Load default theme
-;; (load-theme 'modus-vivendi)
-(use-package dracula-theme)
-(load-theme 'dracula t)
+(load-theme 'modus-vivendi)
+;; (use-package dracula-theme)
+;; (load-theme 'dracula t)
 
-(use-package default-text-scale)
+(if (< emacs-major-version 29)
+    (use-package default-text-scale))
 
 ;; When enabled, and if your mouse supports it, you can scroll the display up or down at pixel resolution,
 ;; according to what your mouse wheel reports. Unlike ‘pixel-scroll-mode’, this mode scrolls the display pixel-by-pixel,

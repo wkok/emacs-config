@@ -47,7 +47,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 
 ;; `C-x o' is a 2 step key binding. `M-o' is much easier.
-(global-set-key (kbd "M-o") 'other-window)
+;; (global-set-key (kbd "M-o") 'other-window)
 
 ;; Delete whitespace just when a file is saved.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)

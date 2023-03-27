@@ -92,4 +92,6 @@
   (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
   (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)))
 
+(global-set-key (kbd "M-o") 'ace-window)
+
 ;;; wk-ide.el ends here
