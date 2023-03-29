@@ -83,6 +83,8 @@
 
 (use-package web-mode)
 
+(use-package js2-mode)
+
 (use-package eglot-java
   :pin melpa)
 (add-hook 'java-mode-hook 'eglot-java-mode)
