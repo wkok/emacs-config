@@ -67,4 +67,7 @@
 (set-locale-environment "en_US.UTF-8")
 (setenv "LANG" "en_US.UTF-8")
 
+;; Ace window switching
+(global-set-key (kbd "M-o") 'ace-window)
+
 ;;; wk-defaults.el ends here

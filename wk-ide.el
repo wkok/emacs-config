@@ -46,24 +46,6 @@
 
 (use-package dockerfile-mode)
 
-(require 'eglot)
-(add-hook 'prog-mode-hook #'eglot-ensure)
-(setq eglot-connect-timeout 300)
-(setq eglot-extend-to-xref t)
-
-(defun jarchive-patch-eglot-override ()
-  "Patch old versions of Eglot to work with Jarchive."
-  (interactive) ;; TODO, remove when eglot is updated in melpa
-  (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
-  (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
-  (message "[jarchive] Eglot successfully patched."))
-
-(use-package jarchive
-  :pin gnu
-  :config
-  (jarchive-setup)
-  (jarchive-patch-eglot-override))
-
 ;; For the reloaded workflow, reset the application
 (defun nrepl-reset ()
   (interactive)
@@ -81,13 +63,41 @@
 
 (use-package json-mode)
 
-(use-package web-mode)
+(use-package web-mode
+  :ensure t
+  :mode (("\\.ts\\'" . web-mode)
+         ("\\.js\\'" . web-mode)
+         ("\\.mjs\\'" . web-mode)
+         ("\\.tsx\\'" . web-mode)
+         ("\\.jsx\\'" . web-mode))
+  :config
+  (setq web-mode-content-types-alist
+        '(("jsx" . "\\.js[x]?\\'"))))
 
-(use-package js2-mode)
-(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
-(add-to-list 'auto-mode-alist '("\\.tsx\\'" . js-mode))
-(add-hook 'js-mode-hook 'js2-minor-mode)
-(add-to-list 'interpreter-mode-alist '("node" . js2-mode))
+(require 'eglot)
+(use-package eglot
+  :ensure nil
+  :hook (prog-mode . eglot-ensure)
+  :init
+  (add-to-list 'eglot-server-programs '(web-mode . ("typescript-language-server" "--stdio")))
+  (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(dockerfile-ts-mode . ("docker-langserver" "--stdio")))
+  :config
+  (setq eglot-connect-timeout 300)
+  (setq eglot-extend-to-xref t))
+
+(defun jarchive-patch-eglot-override ()
+  "Patch old versions of Eglot to work with Jarchive."
+  (interactive) ;; TODO, remove when eglot is updated in melpa
+  (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
+  (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
+  (message "[jarchive] Eglot successfully patched."))
+
+(use-package jarchive
+  :pin gnu
+  :config
+  (jarchive-setup)
+  (jarchive-patch-eglot-override))
 
 (use-package eglot-java
   :pin melpa)
@@ -100,6 +110,8 @@
   (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
   (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)))
 
-(global-set-key (kbd "M-o") 'ace-window)
+(use-package treesit-auto
+  :config
+  (global-treesit-auto-mode))
 
 ;;; wk-ide.el ends here
