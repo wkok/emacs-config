@@ -83,6 +83,7 @@
   (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(dockerfile-ts-mode . ("docker-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(java-ts-mode . eglot-java--eclipse-contact))
+  (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
   :config
   (setq eglot-connect-timeout 300)
   (setq eglot-extend-to-xref t))
