@@ -82,6 +82,7 @@
   (add-to-list 'eglot-server-programs '(web-mode . ("typescript-language-server" "--stdio")))
   (add-to-list 'eglot-server-programs '(dockerfile-mode . ("docker-langserver" "--stdio")))
   (add-to-list 'eglot-server-programs '(dockerfile-ts-mode . ("docker-langserver" "--stdio")))
+  (add-to-list 'eglot-server-programs '(java-ts-mode . ("jdtls"))) ;; does not work :(
   :config
   (setq eglot-connect-timeout 300)
   (setq eglot-extend-to-xref t))
