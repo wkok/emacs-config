@@ -116,4 +116,9 @@
   :config
   (global-treesit-auto-mode))
 
+;; Dart
+(use-package dart-mode)
+
+
+
 ;;; wk-ide.el ends here

@@ -27,4 +27,8 @@
 
   (add-to-list 'auto-mode-alist '("\\.puml\\'" . plantuml-mode)))
 
+
+(use-package exec-path-from-shell
+  :init (exec-path-from-shell-initialize))
+
 ;;; wk-features.el ends here
