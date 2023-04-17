@@ -19,6 +19,7 @@ Configure ~/.emacs
 (load-library "wk-editing")
 (load-library "wk-ide")
 (load-library "wk-features")
+(load-library "wk-treemacs")
 
 ;;; .emacs ends here
 
