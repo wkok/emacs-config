@@ -10,7 +10,9 @@
 
 (use-package cider
   :init
-  (setq clojure-toplevel-inside-comment-form t)
+
+  ;; true makes emacs hang when point moves into comment block ??
+  (setq clojure-toplevel-inside-comment-form nil)
 
   ;; So that "M-." and "M-?" instead get delegated to eglot
   (setq cider-xref-fn-depth 90))
