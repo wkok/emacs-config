@@ -40,4 +40,7 @@
   :ensure t
   :config (treemacs-set-scope-type 'Tabs))
 
+;; workaround for invalid image type svg error
+(add-to-list 'image-types 'svg)
+
 ;;; wk-treemacs.el ends here
