@@ -88,7 +88,9 @@
   (add-to-list 'eglot-server-programs '(bash-ts-mode . ("bash-language-server" "start")))
   :config
   (setq eglot-connect-timeout 300)
-  (setq eglot-extend-to-xref t))
+  (setq eglot-extend-to-xref t)
+  ;; (setq eglot-events-buffer-size 0)
+  )
 
 (defun jarchive-patch-eglot-override ()
   "Patch old versions of Eglot to work with Jarchive."
