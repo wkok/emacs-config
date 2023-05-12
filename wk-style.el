@@ -18,6 +18,9 @@
 ;; Highlight line on point.
 (global-hl-line-mode t)
 
+;; Line numbers
+(global-display-line-numbers-mode t)
+
 ;; Load default theme
 (load-theme 'modus-operandi)
 ;; (use-package dracula-theme)
