@@ -123,6 +123,7 @@
 ;; Dart
 (use-package dart-mode)
 
-
+;; Make subfolders project.el aware
+(setq project-vc-extra-root-markers '(".project-child"))
 
 ;;; wk-ide.el ends here
