@@ -21,6 +21,9 @@
 ;; Line numbers
 (global-display-line-numbers-mode t)
 
+;; ELDoc
+(setq eldoc-echo-area-use-multiline-p nil)
+
 ;; Load default theme
 (load-theme 'modus-operandi)
 ;; (use-package dracula-theme)
