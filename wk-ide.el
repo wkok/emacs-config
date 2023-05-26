@@ -53,7 +53,7 @@
   (interactive)
   (cider-switch-to-repl-buffer)
   (goto-char (point-max))
-  (insert "(reset)")
+  (insert "(restart!)")
   (funcall (lookup-key (current-local-map) (kbd "RET")))
   (cider-switch-to-last-clojure-buffer))
 
