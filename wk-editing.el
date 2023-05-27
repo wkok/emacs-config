@@ -59,13 +59,7 @@
 
 ;; Make copy from host to emacs work
 ;; see: https://github.com/doomemacs/doomemacs/issues/5219
-(if (eq window-system 'pgtk)
-    (setq x-select-request-type 'text/plain\;charset=utf-8))
-
-;; Make copy from emacs to host clipboard work
-(defun copy-the-thing-properly ()
-  (interactive)
-  (funcall interprogram-cut-function
-           (substring-no-properties (car kill-ring))))
+;; (if (eq window-system 'pgtk)
+;;     (setq x-select-request-type 'text/plain\;charset=utf-8))
 
 ;;; wk-editing.el ends hereb

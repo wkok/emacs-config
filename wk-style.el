@@ -29,9 +29,6 @@
 ;; (use-package dracula-theme)
 ;; (load-theme 'dracula t)
 
-(if (< emacs-major-version 29)
-    (use-package default-text-scale))
-
 ;; When enabled, and if your mouse supports it, you can scroll the display up or down at pixel resolution,
 ;; according to what your mouse wheel reports. Unlike ‘pixel-scroll-mode’, this mode scrolls the display pixel-by-pixel,
 ;; as opposed to only animating line-by-line scrolls.
