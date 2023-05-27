@@ -9,8 +9,6 @@
 (require 'package)
 
 (add-to-list 'package-archives
-             '("melpa-stable" . "https://stable.melpa.org/packages/") t)
-(add-to-list 'package-archives
              '("melpa" . "https://melpa.org/packages/") t)
 (add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
@@ -21,7 +19,7 @@
  use-package-always-ensure t
 
  ;; Default value for :pin in each use-package.
- use-package-always-pin "melpa-stable")
+ use-package-always-pin "melpa")
 
 ;; Load and activate emacs packages. Do this first so that the packages are loaded before
 ;; you start trying to modify them.  This also sets the load path.
