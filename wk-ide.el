@@ -59,7 +59,9 @@
 
 (use-package clojure-mode
   :ensure nil
-  :bind (("C-M-+" . nrepl-reset)))
+  :bind (("C-M-+" . nrepl-reset))
+  :config
+  (setq clojure-indent-style 'align-arguments))
 
 (use-package yaml-mode)
 
