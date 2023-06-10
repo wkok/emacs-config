@@ -15,5 +15,6 @@
 (load-library "wk-ide")
 (load-library "wk-features")
 (load-library "wk-treemacs")
+(load-library "breadcrumb")
 
 ;;; .emacs ends here

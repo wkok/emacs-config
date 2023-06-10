@@ -57,9 +57,4 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-;; Make copy from host to emacs work
-;; see: https://github.com/doomemacs/doomemacs/issues/5219
-;; (if (eq window-system 'pgtk)
-;;     (setq x-select-request-type 'text/plain\;charset=utf-8))
-
 ;;; wk-editing.el ends hereb
