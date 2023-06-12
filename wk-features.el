@@ -12,11 +12,6 @@
   :init
   (add-to-list 'auto-mode-alist '("\\.rest" . restclient-mode)))
 
-;; Provides auto-completion for HTTP methods and headers
-(use-package company-restclient
-  :ensure t)
-(add-to-list 'company-backends 'company-restclient)
-
 (use-package plantuml-mode
   :ensure t
   :init

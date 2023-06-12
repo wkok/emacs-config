@@ -24,15 +24,27 @@
   :config
   (which-key-mode))
 
-(use-package selectrum
+(use-package vertico
   :ensure t
-  :config (selectrum-mode))
+  :init
+  (vertico-mode))
 
-(use-package selectrum-prescient
+(use-package savehist
+  :ensure nil
+  :init
+  (savehist-mode))
+
+(use-package orderless
   :ensure t
-  :config
-  (selectrum-prescient-mode)
-  (prescient-persist-mode))
+  :init
+  (setq completion-styles '(orderless basic)
+        completion-category-defaults nil
+        completion-category-overrides '((file (styles partial-completion)))))
+
+(use-package marginalia
+  :ensure t
+  :init
+  (marginalia-mode))
 
 (use-package flymake
   :ensure nil

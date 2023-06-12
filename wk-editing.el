@@ -6,16 +6,15 @@
 
 ;;; Code:
 
-(use-package company
+(use-package corfu
   :ensure t
-  :bind (:map
-         global-map
-         ("TAB" . company-indent-or-complete-common))
-  :config
-  (global-company-mode t)
-  :custom
-  (company-idle-delay nil)
-  :diminish nil)
+  :init
+  (global-corfu-mode))
+
+(use-package emacs
+  :init
+  (setq completion-cycle-threshold 3)
+  (setq tab-always-indent 'complete))
 
 (use-package smartparens
   :ensure t
