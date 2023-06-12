@@ -8,15 +8,17 @@
 
 ;; Does not seem to be available in melpa-stable
 (use-package restclient
+  :ensure t
   :init
-  (add-to-list 'auto-mode-alist '("\\.rest" . restclient-mode))
-  :pin melpa)
+  (add-to-list 'auto-mode-alist '("\\.rest" . restclient-mode)))
 
 ;; Provides auto-completion for HTTP methods and headers
-(use-package company-restclient)
+(use-package company-restclient
+  :ensure t)
 (add-to-list 'company-backends 'company-restclient)
 
 (use-package plantuml-mode
+  :ensure t
   :init
   (setq plantuml-jar-path "/opt/plantuml/plantuml.jar")
   (setq plantuml-default-exec-mode 'jar)
@@ -29,6 +31,7 @@
 
 
 (use-package exec-path-from-shell
+  :ensure t
   :init (exec-path-from-shell-initialize))
 
 ;;; wk-features.el ends here

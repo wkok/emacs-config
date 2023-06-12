@@ -6,9 +6,11 @@
 
 ;;; Code:
 
-(use-package magit)
+(use-package magit
+  :ensure t)
 
 (use-package cider
+  :ensure t
   :init
 
   ;; true makes emacs hang when point moves into comment block ??
@@ -18,13 +20,16 @@
   (setq cider-xref-fn-depth 90))
 
 (use-package which-key
-    :config
-    (which-key-mode))
+  :ensure t
+  :config
+  (which-key-mode))
 
 (use-package selectrum
+  :ensure t
   :config (selectrum-mode))
 
 (use-package selectrum-prescient
+  :ensure t
   :config
   (selectrum-prescient-mode)
   (prescient-persist-mode))
@@ -37,16 +42,20 @@
   :config (remove-hook 'flymake-diagnostic-functions #'flymake-proc-legacy-flymake))
 
 (use-package flymake-kondor
+  :ensure t
   :hook (clojure-mode . flymake-kondor-setup))
 
 (use-package yasnippet
+  :ensure t
   :config
   (yas-global-mode))
 
 (use-package yasnippet-snippets
+  :ensure t
   :after yasnippet)
 
-(use-package dockerfile-mode)
+(use-package dockerfile-mode
+  :ensure t)
 
 ;; For the reloaded workflow, reset the application
 (defun nrepl-reset ()
@@ -63,9 +72,11 @@
   :config
   (setq clojure-indent-style 'align-arguments))
 
-(use-package yaml-mode)
+(use-package yaml-mode
+  :ensure t)
 
-(use-package json-mode)
+(use-package json-mode
+  :ensure t)
 
 (use-package web-mode
   :ensure t
@@ -102,13 +113,13 @@
   (message "[jarchive] Eglot successfully patched."))
 
 (use-package jarchive
-  :pin gnu
+  :ensure t
   :config
   (jarchive-setup)
   (jarchive-patch-eglot-override))
 
 (use-package eglot-java
-  :pin melpa)
+  :ensure t)
 (add-hook 'java-mode-hook 'eglot-java-mode)
 (add-hook 'eglot-java-mode-hook (lambda ()
   (define-key eglot-java-mode-map (kbd "C-c l n") #'eglot-java-file-new)
@@ -119,11 +130,13 @@
   (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)))
 
 (use-package treesit-auto
+  :ensure t
   :config
   (global-treesit-auto-mode))
 
 ;; Dart
-(use-package dart-mode)
+(use-package dart-mode
+  :ensure t)
 
 ;; Make subfolders project.el aware
 (setq project-vc-extra-root-markers '(".project-child"))

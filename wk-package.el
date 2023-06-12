@@ -13,13 +13,13 @@
 (add-to-list 'package-archives
              '("gnu" . "http://elpa.gnu.org/packages/") t)
 
-(setq-default
+;; (setq-default
 
- ;; Automatically :ensure each use-package.
- use-package-always-ensure t
+;;  ;; Automatically :ensure each use-package.
+;;  use-package-always-ensure t
 
- ;; Default value for :pin in each use-package.
- use-package-always-pin "melpa")
+;;  ;; Default value for :pin in each use-package.
+;;  use-package-always-pin "melpa")
 
 ;; Load and activate emacs packages. Do this first so that the packages are loaded before
 ;; you start trying to modify them.  This also sets the load path.

@@ -7,6 +7,7 @@
 ;;; Code:
 
 (use-package company
+  :ensure t
   :bind (:map
          global-map
          ("TAB" . company-indent-or-complete-common))
@@ -17,6 +18,7 @@
   :diminish nil)
 
 (use-package smartparens
+  :ensure t
   :delight
   :config
   (smartparens-global-strict-mode t)
@@ -44,15 +46,17 @@
   :ensure smartparens)
 
 (use-package expand-region
+  :ensure t
   :bind ("C-=" . er/expand-region))
 
 (use-package undo-tree
-  :pin gnu
+  :ensure t
   :init
   (setq undo-tree-history-directory-alist '(("." . "~/.emacs.d/undo")))
   (global-undo-tree-mode))
 
-(use-package markdown-mode)
+(use-package markdown-mode
+    :ensure t)
 
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)

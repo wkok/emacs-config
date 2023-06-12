@@ -8,12 +8,6 @@
 
 (setq-default
 
- ;; As recommended by lsp-doctor
- ;; gc-cons-threshold 100000000
-
- ;; As recommended by lsp-doctor
- ;; read-process-output-max (* 1024 1024)
-
  ;; Don't use the compiled code if its the older package.
  load-prefer-newer t
 
@@ -22,9 +16,6 @@
 
  ;; Do not put 'customize' config in init.el; give it another file.
  custom-file "~/.emacs.d/custom-file.el"
-
- ;; Use your name in the frame title. :)
- ;; frame-title-format (format "%s's Emacs" (capitalize user-login-name))
 
  ;; Do not create lockfiles.
  create-lockfiles nil
@@ -45,9 +36,6 @@
 
 ;; Change all yes/no questions to y/n type
 (fset 'yes-or-no-p 'y-or-n-p)
-
-;; `C-x o' is a 2 step key binding. `M-o' is much easier.
-;; (global-set-key (kbd "M-o") 'other-window)
 
 ;; Delete whitespace just when a file is saved.
 (add-hook 'before-save-hook 'delete-trailing-whitespace)
