@@ -23,11 +23,11 @@
 
 ;; Load and activate emacs packages. Do this first so that the packages are loaded before
 ;; you start trying to modify them.  This also sets the load path.
-(package-initialize)
+;; (package-initialize)
 
 ;; Install 'use-package' if it is not installed.
-(when (not (package-installed-p 'use-package))
-  (package-refresh-contents)
-  (package-install 'use-package))
+;; (when (not (package-installed-p 'use-package))
+  ;; (package-refresh-contents)
+  ;; (package-install 'use-package))
 
 ;;; wk-package.el ends here

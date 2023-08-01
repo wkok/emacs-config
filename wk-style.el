@@ -19,7 +19,7 @@
 (global-hl-line-mode t)
 
 ;; Line numbers
-(global-display-line-numbers-mode t)
+;; (global-display-line-numbers-mode t)
 
 ;; ELDoc
 (setq eldoc-echo-area-use-multiline-p nil)
