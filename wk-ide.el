@@ -70,17 +70,20 @@
   :ensure t)
 
 ;; For the reloaded workflow, reset the application
-(defun nrepl-reset ()
+(defun nrepl-reset (action)
   (interactive)
   (cider-switch-to-repl-buffer)
   (goto-char (point-max))
-  (insert "(restart!)")
+  (insert (cond ((string-equal action "refresh") "(refresh!)")
+                ((string-equal action "restart") "(restart!)")
+                (t (error "Invalid action"))))
   (funcall (lookup-key (current-local-map) (kbd "RET")))
   (cider-switch-to-last-clojure-buffer))
 
 (use-package clojure-mode
   :ensure nil
-  :bind (("C-M-+" . nrepl-reset))
+  :bind (("C-M-=" . (lambda () (interactive) (nrepl-reset "refresh")))
+         ("C-M-+" . (lambda () (interactive) (nrepl-reset "restart"))))
   :config
   (setq clojure-indent-style 'align-arguments))
 

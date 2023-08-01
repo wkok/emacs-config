@@ -31,6 +31,6 @@
 
 (pixel-scroll-precision-mode)
 
-(setq-default cursor-type '(bar . 2))
+;; (setq-default cursor-type '(bar . 2))
 
 ;;; wk-style.el ends here

@@ -60,4 +60,9 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
+(use-package emacs
+  :init
+  (global-visual-line-mode)
+  (breadcrumb-mode))
+
 ;;; wk-editing.el ends hereb
