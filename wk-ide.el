@@ -85,7 +85,8 @@
   :bind (("C-M-=" . (lambda () (interactive) (nrepl-reset "refresh")))
          ("C-M-+" . (lambda () (interactive) (nrepl-reset "restart"))))
   :config
-  (setq clojure-indent-style 'align-arguments))
+  (setq clojure-indent-style 'align-arguments)
+  (setq clojure-align-forms-automatically t))
 
 (use-package yaml-mode
   :ensure t)
