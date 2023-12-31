@@ -16,5 +16,6 @@
 (load-library "wk-ide")
 (load-library "wk-features")
 (load-library "wk-treemacs")
+(load-library "cider-storm")
 
 ;;; .emacs ends here

@@ -14,7 +14,9 @@
 (use-package emacs
   :init
   (setq completion-cycle-threshold 3)
-  (setq tab-always-indent 'complete))
+  (setq tab-always-indent 'complete)
+  (global-visual-line-mode)
+  (breadcrumb-mode))
 
 (use-package smartparens
   :ensure t
@@ -60,9 +62,4 @@
 (add-hook 'text-mode-hook 'flyspell-mode)
 (add-hook 'prog-mode-hook 'flyspell-prog-mode)
 
-(use-package emacs
-  :init
-  (global-visual-line-mode)
-  (breadcrumb-mode))
-
-;;; wk-editing.el ends hereb
+;;; wk-editing.el ends here

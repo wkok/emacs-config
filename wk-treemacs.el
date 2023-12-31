@@ -26,9 +26,9 @@
   :ensure t
   :hook (dired-mode . treemacs-icons-dired-enable-once))
 
-(use-package treemacs-magit
-  :ensure  t
-  :after (treemacs magit))
+;; (use-package treemacs-magit
+;;   :ensure  t
+;;   :after (treemacs magit))
 
 ;; (use-package treemacs-persp ;;treemacs-perspective if you use perspective.el vs. persp-mode
 ;;   :after (treemacs persp-mode) ;;or perspective vs. persp-mode

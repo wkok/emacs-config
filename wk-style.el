@@ -25,7 +25,7 @@
 (setq eldoc-echo-area-use-multiline-p nil)
 
 ;; Load default theme
-(load-theme 'modus-operandi)
+(load-theme 'modus-vivendi)
 ;; (use-package dracula-theme)
 ;; (load-theme 'dracula t)
 

@@ -74,7 +74,8 @@
   (interactive)
   (cider-switch-to-repl-buffer)
   (goto-char (point-max))
-  (insert (cond ((string-equal action "refresh") "(refresh!)")
+  (insert (cond ((string-equal action "unalias") "(unalias!)")
+                ((string-equal action "refresh") "(refresh!)")
                 ((string-equal action "restart") "(restart!)")
                 (t (error "Invalid action"))))
   (funcall (lookup-key (current-local-map) (kbd "RET")))
@@ -82,7 +83,8 @@
 
 (use-package clojure-mode
   :ensure nil
-  :bind (("C-M-=" . (lambda () (interactive) (nrepl-reset "refresh")))
+  :bind (("C-M--" . (lambda () (interactive) (nrepl-reset "unalias")))
+         ("C-M-=" . (lambda () (interactive) (nrepl-reset "refresh")))
          ("C-M-+" . (lambda () (interactive) (nrepl-reset "restart"))))
   :config
   (setq clojure-indent-style 'align-arguments)
@@ -121,18 +123,19 @@
   ;; (setq eglot-events-buffer-size 0)
   )
 
-(defun jarchive-patch-eglot-override ()
-  "Patch old versions of Eglot to work with Jarchive."
-  (interactive) ;; TODO, remove when eglot is updated in melpa
-  (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
-  (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
-  (message "[jarchive] Eglot successfully patched."))
+;; (defun jarchive-patch-eglot-override ()
+;;   "Patch old versions of Eglot to work with Jarchive."
+;;   (interactive) ;; TODO, remove when eglot is updated in melpa
+;;   (advice-add 'eglot--path-to-uri :around #'jarchive--wrap-legacy-eglot--path-to-uri)
+;;   (advice-add 'eglot--uri-to-path :around #'jarchive--wrap-legacy-eglot--uri-to-path)
+;;   (message "[jarchive] Eglot successfully patched."))
 
 (use-package jarchive
   :ensure t
   :config
-  (jarchive-setup)
-  (jarchive-patch-eglot-override))
+  (jarchive-mode)
+  ;; (jarchive-patch-eglot-override)
+  )
 
 (use-package eglot-java
   :ensure t)
