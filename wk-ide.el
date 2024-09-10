@@ -160,6 +160,11 @@
   (define-key eglot-java-mode-map (kbd "C-c l T") #'eglot-java-project-build-task)
   (define-key eglot-java-mode-map (kbd "C-c l R") #'eglot-java-project-build-refresh)))
 
+(use-package eglot-booster
+  :after eglot
+  :config
+  (eglot-booster-mode))
+
 (use-package groovy-mode
   :ensure t)
 
