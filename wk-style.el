@@ -33,4 +33,24 @@
 
 ;; (setq-default cursor-type '(bar . 2))
 
+;; Start fullscreen
+(add-to-list 'default-frame-alist '(fullscreen . maximized))
+
+;; Add some spacing
+(use-package spacious-padding
+  :ensure t
+  :init
+  (setq spacious-padding-subtle-mode-line t)
+  (setq spacious-padding-widths
+      '( :internal-border-width 10
+         :header-line-width 4
+         :mode-line-width 4
+         :tab-width 4
+         :right-divider-width 10
+         :scroll-bar-width 8
+         :fringe-width 8))
+  (spacious-padding-mode))
+
+
+
 ;;; wk-style.el ends here
